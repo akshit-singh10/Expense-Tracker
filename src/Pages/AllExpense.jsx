@@ -9,7 +9,7 @@ export default function Home() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/expenses`);
         if (!res.ok) throw new Error("Server error");
         const data = await res.json();
         console.log(data);

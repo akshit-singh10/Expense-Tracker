@@ -35,7 +35,7 @@ export default function New() {
             const getData = async () => {
 
                 const res = await fetch(
-                    `http://localhost:5050/expenses/${id}`
+                    `${import.meta.env.VITE_API_URL}/expenses/${id}`
                 );
 
                 const data = await res.json();
@@ -70,7 +70,7 @@ export default function New() {
     const submitData = async () => {
 
         const response = await fetch(
-            "http://localhost:5050/new",
+            `${import.meta.env.VITE_API_URL}/new`,
             {
                 method: "POST",
                 headers: {

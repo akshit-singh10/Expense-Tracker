@@ -8,7 +8,7 @@ export default function Categorywise() {
    const {category} = useParams();
 
 
-  useEffect(async () => {
+  useEffect( () => {
       const getData = async () => {
         try {
           const res = await fetch(`${import.meta.env.VITE_API_URL}/expenses/category/${category}`);

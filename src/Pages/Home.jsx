@@ -16,7 +16,7 @@ export default function Home() {
             </div>
 
             <div className='buttons'>
-                <Button variant="contained" color="primary" sx={{ textTransform: "none" }}>+ Add New expense</Button>
+                <Button variant="contained" color="primary" onClick={() => navigate("/expenses")}  sx={{ textTransform: "none" }}>+ Add New expense</Button>
             </div>
 
             <br /><br /><br />

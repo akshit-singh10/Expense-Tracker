@@ -11,10 +11,10 @@ app.use(express.json());
 require('dotenv').config();
 
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
 app.get("/expenses/:id", (req, res) => {
@@ -24,7 +24,7 @@ app.get("/expenses/:id", (req, res) => {
     connection.query(q, (err, result) => {
         if (err) {
             console.log(err);
-            throw err;
+            return res.status(500).json({ error: err.message });
         }
         console.log(result);
         res.json(result[0]);
@@ -62,7 +62,8 @@ app.get("/expenses", (req, res) => {
 
     connection.query(q, (err, result) => {
         if (err) {
-            throw err;
+            console.log(err);
+            return res.status(500).json({ error: err.message });
         }
         res.json(result);
     });
@@ -75,7 +76,7 @@ app.delete("/expenses/:id", (req, res) => {
     connection.query(q, (err, result) => {
         if (err) {
             console.log(err);
-            throw err;
+            return res.status(500).json({ error: err.message });
         }
         console.log(result);
         res.send(result.message);
@@ -84,10 +85,11 @@ app.delete("/expenses/:id", (req, res) => {
 
 app.get("/expenses/category/:name", (req, res) => {
     const name = req.params.name.trim();
-   const q = name=== "" ? 'SELECT * FROM ExpenseTable' : `SELECT * FROM ExpenseTable WHERE category = '${name}'`;
+    const q = name === "" ? 'SELECT * FROM ExpenseTable' : `SELECT * FROM ExpenseTable WHERE category = '${name}'`;
     connection.query(q, (err, result) => {
         if (err) {
-            throw err;
+            console.log(err);
+            return res.status(500).json({ error: err.message });
         }
         res.json(result);
     });
@@ -108,16 +110,16 @@ app.post("/new", (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404).send("Route not found");
+    res.status(404).send("Route not found");
 });
 
 app.get(/.*/, (req, res) => {
-  res.status(404).send("Page not found");
+    res.status(404).send("Page not found");
 });
 
 
 app.listen(process.env.PORT || 5050, () => {
 
     console.log("Server is connected on port 5050");
-    
+
 });
