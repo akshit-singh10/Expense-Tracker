@@ -1,0 +1,18 @@
+.categorySelect
+{
+    margin: 0 auto;
+    width: 35vw;
+    display: flex;
+    justify-content: start;
+}
+
+#categorySelect
+{
+    height: 3rem;
+    width: 40vw;
+    font-size: larger;
+    border-radius: 10px;
+    margin-right: 1.5rem;
+}
+
+

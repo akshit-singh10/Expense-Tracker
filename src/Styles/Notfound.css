@@ -1,0 +1,25 @@
+.outer
+{
+    margin: 0 auto;
+    margin-top: 7rem;
+    width: 70vw;
+}
+.heading
+{
+    color: blue;
+}
+
+.inner
+{
+    display: flex;
+    width: 50vw;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inner .letsgo
+{
+    height: 2rem;
+    
+}

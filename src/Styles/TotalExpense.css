@@ -1,0 +1,50 @@
+.totalExpense {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    padding: 14px 20px;
+
+    background: #eef5ff;
+    border: 1px solid #d7e7ff;
+    border-radius: 8px;
+
+    margin-bottom: 12px;
+}
+
+.totalExpenseIcon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #3564e8;
+}
+
+.totalExpenseIcon svg {
+    font-size: 32px;
+}
+
+.totalExpenseContent {
+    margin-left: 8px;
+}
+
+.totalExpenseContent p {
+    margin: 0 0 2px 0;
+
+    font-size: 13px;
+    font-weight: 500;
+    color: #16356f;
+}
+
+.totalExpenseContent h2 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 700;
+    color: #123b8f;
+}

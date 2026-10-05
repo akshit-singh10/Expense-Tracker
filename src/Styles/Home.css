@@ -1,0 +1,12 @@
+.headlines
+{
+    text-align: center;
+}
+
+.buttons
+{
+    width: 50vw;
+    display : flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}

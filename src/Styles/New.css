@@ -1,0 +1,45 @@
+
+
+.newForm
+{
+    margin : 0 auto;
+    margin-top: 5rem;
+    background-color: whitesmoke;
+    width: 50vw;
+    border-radius: 15px;
+}
+
+.inputField
+{
+
+    width: 80%;
+    margin: 1rem auto;
+    display: block;
+}
+
+
+.field
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+/* .field .labelCategory
+{
+    margin-top: 1rem;
+} */
+
+#categoryselection 
+{
+    height: 3rem;
+    margin-left: 0;
+    margin-top: 0.3rem;
+}
+
+.submitButton
+{
+    width: 30vw;
+    margin : 0 auto;
+}

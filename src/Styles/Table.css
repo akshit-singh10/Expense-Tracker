@@ -1,0 +1,92 @@
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+    color: #17366d;
+
+    border: 1px solid #d9e4f7;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+/* Header */
+.table thead {
+    background-color: #edf4ff;
+}
+
+.table th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    color: #17366d;
+    border-bottom: 1px solid #d9e4f7;
+}
+
+/* Table rows */
+.table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #e3ebf7;
+    color: #17366d;
+}
+
+/* Remove border from last row */
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.table tbody tr:hover {
+    background-color: #f7faff;
+}
+
+/* Amount column */
+.table td:nth-child(2) {
+    font-weight: 500;
+}
+
+/* Actions column */
+.table td:last-child {
+    white-space: nowrap;
+}
+
+/* All action buttons */
+.table td:last-child button {
+    width: 32px;
+    height: 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 8px;
+    padding: 0;
+
+    border-radius: 7px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+/* Edit button */
+.table td:last-child button:first-child {
+    background-color: #f1f6ff;
+    color: #2563eb;
+    border: 1px solid #cbdcff;
+}
+
+.table td:last-child button:first-child:hover {
+    background-color: #e3edff;
+}
+
+/* Delete button */
+.table td:last-child button:last-child {
+    background-color: #fff1f4;
+    color: #ef4444;
+    border: 1px solid #ffd2dc;
+}
+
+.table td:last-child button:last-child:hover {
+    background-color: #ffe3e9;
+}

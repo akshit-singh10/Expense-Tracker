@@ -1,0 +1,25 @@
+.navbarClass {
+    display: flex;
+    justify-content: space-around;
+    background-color: antiquewhite;
+}
+
+.navbaropt {
+    display: flex;
+    justify-content: space-around;
+}
+
+.MuiButton-root.active {
+    text-decoration: underline;
+    text-decoration-color: blue;
+    text-underline-offset: 10px;
+    font-weight: bold;
+}
+
+.logoText
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
