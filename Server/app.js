@@ -6,7 +6,7 @@ const app = express();
 const fs = require('fs');
 const path = require('path');
 
-require('dotenv').config({path : "./Server/.env"});
+require('dotenv').config({ path: "./Server/.env" });
 
 app.use(cors());
 app.use(express.json());
@@ -15,14 +15,16 @@ require('dotenv').config();
 
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
+    port: process.env.PORT || 4000,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port : process.env.PORT || 4000,
-    ssl :
-    {
-        ca : fs.readFileSync(path.join(__dirname,process.env.CA)),
-    }
+    ssl: {
+        ca: fs.readFileSync(path.join(__dirname, process.env.CA)),
+    },
+    waitForConnections: true,
+    connectionLimit: 5,
+    enableKeepAlive: true,
 });
 
 
