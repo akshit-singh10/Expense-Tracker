@@ -35,7 +35,7 @@ export default function New() {
             const getData = async () => {
 
                 const res = await fetch(
-                    `${import.meta.env.VITE_API_URL}/expenses/${id}`
+                    `${import.meta.env.VITE_API_URL ?? ""}/expenses/${id}`
                 );
 
                 const data = await res.json();
@@ -70,7 +70,7 @@ export default function New() {
     const submitData = async () => {
 
         const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/new`,
+            `${import.meta.env.VITE_API_URL ?? ""}/new`,
             {
                 method: "POST",
                 headers: {
@@ -90,7 +90,7 @@ export default function New() {
     const updateData = async () => {
 
         const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/expenses/${id}`,
+            `${import.meta.env.VITE_API_URL ?? ""}/expenses/${id}`,
             {
                 method: "PUT",
                 headers: {

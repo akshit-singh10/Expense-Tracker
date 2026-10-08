@@ -13,7 +13,7 @@ export default function Categorywise() {
   useEffect( () => {
       const getData = async () => {
         try {
-          const res = await fetch(`${import.meta.env.VITE_API_URL}/expenses/category/${category}`);
+          const res = await fetch(`${import.meta.env.VITE_API_URL ?? ""}/expenses/category/${category}`);
           if (!res.ok) throw new Error("Server error");
           const data = await res.json();
           console.log(data);

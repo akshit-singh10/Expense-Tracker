@@ -8,7 +8,7 @@ export default function Table({ expenses = [] ,setExpenses}) {
 
     let deleteRequest = async (id)=>
     {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/expenses/${id}`,{
+        const res = await fetch(`${import.meta.env.VITE_API_URL ?? ""}/expenses/${id}`,{
             method : "DELETE",
             headers : { "Content-Type": "application/json"},
         });
