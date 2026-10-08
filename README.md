@@ -48,3 +48,7 @@ React, Vite, Material UI, React Router, Node.js, Express, MySQL
    Add a `.env` file in the root with `VITE_API_URL=http://localhost:5050`.
 
 4. Open http://localhost:5173
+
+## Database
+
+The app now uses **TiDB Cloud** (MySQL-compatible) instead of local MySQL. Create an `expense_tracker` database with an `ExpenseTable` table, then copy `Server/.env.example` to `Server/.env` and fill in your TiDB credentials (`DB_NAME=expense_tracker`). Never commit `.env`.
