@@ -2,6 +2,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Table from '../components/Table';
+import CategorySelection from '../components/CategorySelection';
+import '../Styles/Categorywise.css'
 
 export default function Categorywise() {
    const [expenses, setExpenses] = useState([]);

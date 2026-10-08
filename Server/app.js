@@ -3,7 +3,10 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const app = express();
 
-require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
+
+require('dotenv').config({path : "./Server/.env"});
 
 app.use(cors());
 app.use(express.json());
@@ -14,8 +17,14 @@ const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    port : process.env.PORT || 4000,
+    ssl :
+    {
+        ca : fs.readFileSync(path.join(__dirname,process.env.CA)),
+    }
 });
+
 
 app.get("/expenses/:id", (req, res) => {
     let { id } = req.params;
@@ -118,7 +127,7 @@ app.get(/.*/, (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 5050, () => {
+app.listen(5050, () => {
 
     console.log("Server is connected on port 5050");
 
